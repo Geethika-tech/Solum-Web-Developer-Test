@@ -1,141 +1,400 @@
+/**
+ * Global variables for theme colors and typography.
+ */
+:root {
+  --text-primary: #111;
+  --text-secondary: black;
+  --button-primary: #974EC3; /* Blue */
+  --button-primary-hover: #FF6AC2;
+  --border-color: #ccc;
+  --focus-color: #007bff;
+}
+
+/**
+ * Styles for the main page container (e.g., body or root div).
+ * Centers content vertically and horizontally.
+ */
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background); /* Assuming --background is defined elsewhere (like in <body>) */
+  padding: 2rem; /* Responsive padding around the whole page */
 }
 
-.main {
-  display: flex;
-  min-height: 100vh;
+/**
+ * Main container for the Login Form (The card/box itself).
+ * Defines the card's width, alignment, and spacing.
+ */
+.loginForm{
+background-color: #FFECEC;
+
+    padding: 2.5rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    box-sizing: border-box;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+.main{
+
+padding: 5rem 3rem; /* scalable padding using rem */
+
+border-radius: 1rem;
+
+width: 100%;
+
+max-width: 40rem; /* ~400px */
+
+display: flex;
+
+flex-direction: column;
+
+align-items: stretch;
+
+gap: 1.5rem; /* vertical spacing between elements */
+
+box-sizing: border-box;
+
+
+
+
+
+}
+
+/**
+ * Heading style for titles inside the form.
+ */
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Wrapper for icon-enabled input fields.
+ * Sets up the container for relative positioning of the icon.
+ */
+.inputGroup {
+    position: relative;
+    width: 100%;
+
+    /* Input Container Appearance (applies border/radius to the whole group) */
+
+    border:none;
+    background-color:#F9F8F6;
+
+    /* Flex alignment for the icon and input */
+    display: flex;
+    align-items: center;
+
+    /* Padding to make room for the left-aligned icon */
+    padding-left: 3rem;
+}
+
+/**
+ * Absolute positioning for the icon inside the input group.
+ */
+/**
+ * Absolute positioning for the icon inside the input group.
+ */
+.icon {
+    position: absolute;
+    left: 1rem;
+
+    /* ADD these two lines to create a white circular/square background */
+
+    padding: 0.25rem;       /* Add a little padding around the icon */
+    border-radius: 50%;      /* Optional: Make the background circular for a sleeker look */
+
+    /* Perfect vertical centering */
+    top: 50%;
+    transform: translateY(-50%);
+
+
+    /* Appearance and interaction */
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+/**
+ * Base styles for all standard input fields (if not using .inputGroup).
+ * NOTE: The .inputGroup input style overrides the padding/border here for
+ * icon-enabled fields.
+ */
+
+/**
+ * Specific styles for the input element *inside* the .inputGroup wrapper.
+ * This overrides default padding/border to create the seamless icon integration.
+ */
+.inputGroup input {
+    /* Reset default input styles to blend with the .inputGroup wrapper */
+    border: none;
+    outline: none;
+    background-color:#F9F8F6 ;
+
+    /* Input size and spacing within the group */
+    width: 100%; /* Important: Takes up all available width */
+    flex-grow: 1; /* Make the input fill remaining space */
+    padding: 1rem 1rem 1rem 0; /* Vertical padding (1rem) + Right padding (1rem) */
+
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/**
+ * Focus state for the input group wrapper (applies to icon-enabled fields).
+ */
+.inputGroup:focus-within {
+    border-color: var(--focus-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+/**
+ * Login Button styling.
+ */
+.button {
+  display: block;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
+  margin-top: 0.5rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--button-primary);
+  color: #fff;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
   cursor: pointer;
-  width: fit-content;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:hover {
+  background-color: var(--button-primary-hover);
+  /* Removed redundant transform: translateY(-2px); from the original */
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/**
+ * Error message styling (e.g., validation errors).
+ */
+.error {
+  color: #ED3500; /* Red error color */
+  font-size: 1rem;
   font-weight: 500;
+  text-align: center;
+  margin-top: 0.5rem;
+  height:1.25rem;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.hidden{
+visibility:hidden;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.forgotPasswordLink {
+    align-self: flex-end;
+    font-size: 1rem;
+    font-weight: 500
+    color: var(--text-secondary); /* Use a subtle gray color */
+    text-decoration: none;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+ .welcome{
+   background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+
+    /* ** LAYOUT AND SPACING ** */
+    width: 100%;
+    max-width: 50rem; /* Same width as your form */
+    padding: 3rem;
+
+    /* Center the text and stack the elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    gap: 1.5rem; /* Consistent spacing between elements */
+
+    /* ** TYPOGRAPHY ** */
+    color: var(--text-primary, #333); /* Use a dark primary text color */
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.welcome h1 {
+    font-size: 2rem;
+    color: var(--focus-color, #007bff); /* Highlight the welcome name */
+    margin-bottom: 0.5rem;
+
+}
+
+.welcome h3 {
+    font-size: 1.1rem;
+    font-weight: 500; /* Lighter weight for secondary text */
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure the button maintains the desired style, though it may already be defined in .button */
+.welcome .button {
+    margin-top: 1rem;
+    /* You might want a slightly different style for the Logout button
+       (e.g., outlined instead of filled) to differentiate it. */
+}
+
+/* --- Responsive Adjustments --- */
+
+/**
+ * Tablet and larger mobile screen adjustments.
+ */
+@media (max-width: 768px) {
+  .loginForm {
+    /* Responsive changes to form padding and max-width */
+    padding: 3rem 2rem;
+    max-width: 22rem;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .error{
+    font-size: 0.8rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0.75rem 0.875rem;
+  }
+  .forgotPasswordLink {
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+/**
+ * Small mobile screen adjustments.
+ */
+@media (max-width: 480px) {
+  .loginForm {
+    /* Smaller padding for tight screens */
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    margin: 0 1rem; /* Ensure some margin from the screen edge */
   }
 
-  .intro {
-    gap: 16px;
+  .heading {
+    font-size: 1.5rem;
+  }
+  .inputGroup {
+          /* Reduce the padding for the icon area */
+   padding-left: 2.5rem; /* Reduced from 3rem */
+   }
+     .inputGroup input {
+           /* Tighter vertical padding inside the input field */
+           padding: 0.75rem 0.5rem 0.75rem 0;
+           font-size:0.8rem;
+       }
+
+     .icon{
+     left: 0.5rem; /* Reduced from 1rem */
+      font-size: 1.4rem; /* Slightly smaller icon */
+     }
+
+   .error{
+    font-size: 0.6rem;
+   }
+
+
+  .button {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.6rem;
+    text-align:center;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  .welcome h1 {
+      font-size: 0.9rem;
+      color: var(--focus-color, #007bff); /* Highlight the welcome name */
+      margin-bottom: 0.5rem;
+
   }
+
+  .welcome h3 {
+      font-size: 0.6rem;
+      font-weight: 500; /* Lighter weight for secondary text */
+      margin-bottom: 0.5rem;
+
+  }
+
+
 }
+@media (max-width: 300px) {
+    .loginForm {
+        /* Reduce padding drastically for extreme narrowness */
+        padding: 1rem 0.5rem;
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+        /* Ensure the form uses the full space with minimal margin from screen edge */
+        width: calc(100% - 1rem);
+        margin: 0.5rem auto;
+    }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+    .inputGroup {
+        /* Reduce the padding for the icon area */
+        padding-left: 2rem; /* Reduced from 3rem */
+    }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+    .icon {
+        /* Adjust the icon position slightly to match the new padding */
+        left: 0.5rem; /* Reduced from 1rem */
+        font-size: 1.2rem; /* Slightly smaller icon */
+    }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+    .inputGroup input {
+        /* Tighter vertical padding inside the input field */
+        padding: 0.75rem 0.5rem 0.75rem 0;
+    }
+
+    .forgotPasswordLink {
+        /* Ensure the link text fits */
+        font-size: 0.5rem;
+    }
+       .error{
+        font-size: 0.4rem;
+       }
+
+       .button {
+        font-size: 0.3rem;
+        padding: 0.5rem 0.5rem;
+        text-align:center;
+        }
+
+        .welcome h1 {
+              font-size: 0.5rem;
+              color: var(--focus-color, #007bff); /* Highlight the welcome name */
+              margin-bottom: 0.5rem;
+
+          }
+
+          .welcome h3 {
+              font-size: 0.2rem;
+              font-weight: 500; /* Lighter weight for secondary text */
+              margin-bottom: 1.5rem;
+
+          }
 }
