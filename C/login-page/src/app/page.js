@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import { MdEmail } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
-import toast from "react-hot-toast"; // 1. IMPORT THE TOAST FUNCTION
+import toast from "react-hot-toast";
 
 // Simulated credentials
 const credentials = [
@@ -21,66 +21,61 @@ export default function LoginPage() {
   // Handle login form submission
   const handleLogin = (e) => {
     e.preventDefault();
-    setError(""); // Clear previous errors at the start of submission
 
-    // Input Validation Checks (Error Toasts)
-    if (!email.trim() && !password.trim()) {
-      setError("Email and password cannot be empty");
-     // Show Error Toast
-      return;
-    } else if (!email.trim()) {
-      setError("Email cannot be empty");
-       // Show Error Toast
-      return;
-    } else if (!password.trim()) {
-      setError("Password cannot be empty");
-     // Show Error Toast
+    setError(""); // clear previous errors
+
+    // Trimmed inputs for reliable validation
+    const trimmedEmail = email.trim();
+    const trimmedPassword = password.trim();
+
+    // --- Validation Checks ---
+    if (!trimmedEmail || !trimmedPassword) {
+      setError(
+        !trimmedEmail && !trimmedPassword
+          ? "Email and password cannot be empty"
+          : !trimmedEmail
+          ? "Email cannot be empty"
+          : "Password cannot be empty"
+      );
       return;
     }
 
-    // Find user by email
-    const user = credentials.find((cred) => cred.email === email);
+    // Check if email exists
+    const user = credentials.find((cred) => cred.email === trimmedEmail);
     if (!user) {
       setError("Email does not exist");
-
       return;
     }
 
-    // Password validation regex
+    // Password policy check
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,16}$/;
-    if (!passwordRegex.test(password)) {
+    if (!passwordRegex.test(trimmedPassword)) {
       setError(
-        "Password must be 8-16 characters, include uppercase, lowercase, number, and symbol"
+        "Password must be 8–16 characters, include uppercase, lowercase, number, and symbol"
       );
-
       return;
     }
 
-    // Check password correctness
-    if (user.password !== password) {
+    // Verify password
+    if (user.password !== trimmedPassword) {
       setError("Incorrect password");
-
       return;
     }
 
-    // Successful login
+    // --- Successful Login ---
     setHideForm(true);
+    setError(""); // clear error
 
-    // 2. ***** REPLACE alert() WITH toast.success() *****
-    toast.success(`Welcome, ${email}!`, {
+    toast.success(`Welcome, ${trimmedEmail}!`, {
       duration: 3000,
-      position: 'top-center', // Ensure it uses your desired position
-
+      position: "top-center",
     });
-    // *************************************************
-
-    setError(""); // clear previous error
-    // Removed: alert("Login successful!");
   };
 
   // Handle logout
   const handleLogout = () => {
+    // Toggle form visibility and reset fields
     setHideForm(false);
     setEmail("");
     setPassword("");
@@ -90,9 +85,17 @@ export default function LoginPage() {
     });
   };
 
+  // Handles form reset by resetting all fields and errors
+  const handleReset = () => {
+  setEmail("");
+  setPassword("");
+  setError("");
+  }
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+
         {hideForm ? (
           <div className={styles.welcome}>
             <h1>Welcome {email}!</h1>
@@ -146,6 +149,15 @@ export default function LoginPage() {
             >
               Login
             </button>
+
+            <button
+             type="button"
+             className={styles.button}
+             onClick={handleReset}
+             >
+             Reset
+            </button>
+
           </form>
         )}
       </main>

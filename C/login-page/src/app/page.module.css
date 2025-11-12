@@ -20,18 +20,31 @@
   align-items: center;
   justify-content: center;
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--background); /* Assuming --background is defined elsewhere (like in <body>) */
-  padding: 2rem; /* Responsive padding around the whole page */
+  background-color: var(--background);
+  padding: 2rem;
 }
 
 /**
  * Main container for the Login Form (The card/box itself).
- * Defines the card's width, alignment, and spacing.
  */
+
+ .main{
+ padding: 2rem 2rem;
+ border-radius: 1rem;
+ width: 100%;
+ max-width: 50rem;
+ display: flex;
+ flex-direction: column;
+ align-items: stretch;
+ gap: 1.5rem;
+ box-sizing: border-box;
+ }
+
+
 .loginForm {
   position: relative;
   background: linear-gradient(220deg,#FFC4C4,#FFECEC);
-  padding: 2.5rem 3rem;
+  padding: 3rem 3rem;
   border-radius: 5%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
   max-width: 50rem;
@@ -43,34 +56,8 @@
 }
 
 
-.main{
-
-padding: 5rem 5rem; /* scalable padding using rem */
-
-border-radius: 1rem;
-
-width: 100%;
-
-max-width: 40rem; /* ~400px */
-
-display: flex;
-
-flex-direction: column;
-
-align-items: stretch;
-
-gap: 1.5rem; /* vertical spacing between elements */
-
-box-sizing: border-box;
-
-
-
-
-
-}
-
 /**
- * Heading style for titles inside the form.
+ * Heading style for title inside the form.
  */
 .heading {
   font-size: 2rem;
@@ -87,67 +74,42 @@ box-sizing: border-box;
 .inputGroup {
     position: relative;
     width: 100%;
-
-    /* Input Container Appearance (applies border/radius to the whole group) */
-
     border:none;
     background-color:#F9F8F6;
-
-    /* Flex alignment for the icon and input */
     display: flex;
     align-items: center;
-
-    /* Padding to make room for the left-aligned icon */
     padding-left: 3rem;
 }
 
 /**
  * Absolute positioning for the icon inside the input group.
  */
-/**
- * Absolute positioning for the icon inside the input group.
- */
 .icon {
     position: absolute;
     left: 1rem;
-
-    /* ADD these two lines to create a white circular/square background */
-
-    padding: 0.25rem;       /* Add a little padding around the icon */
-    border-radius: 50%;      /* Optional: Make the background circular for a sleeker look */
-
-    /* Perfect vertical centering */
+    padding: 0.25rem;
+    border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-
-
-    /* Appearance and interaction */
     font-size: 1.5rem;
     color: var(--text-secondary);
     pointer-events: none;
 }
 
-/**
- * Base styles for all standard input fields (if not using .inputGroup).
- * NOTE: The .inputGroup input style overrides the padding/border here for
- * icon-enabled fields.
- */
 
 /**
  * Specific styles for the input element *inside* the .inputGroup wrapper.
  * This overrides default padding/border to create the seamless icon integration.
  */
+
 .inputGroup input {
-    /* Reset default input styles to blend with the .inputGroup wrapper */
+
     border: none;
     outline: none;
     background-color:#F9F8F6 ;
-
-    /* Input size and spacing within the group */
-    width: 100%; /* Important: Takes up all available width */
-    flex-grow: 1; /* Make the input fill remaining space */
-    padding: 1rem 1rem 1rem 0; /* Vertical padding (1rem) + Right padding (1rem) */
-
+    width: 100%;
+    flex-grow: 1;
+    padding: 1rem 1rem 1rem 0;
     font-size: 1rem;
     box-sizing: border-box;
 }
@@ -155,15 +117,16 @@ box-sizing: border-box;
 /**
  * Focus state for the input group wrapper (applies to icon-enabled fields).
  */
+
 .inputGroup:focus-within {
     border-color: var(--focus-color);
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-
 /**
- * Login Button styling.
+ *  Button styling for all buttons
  */
+
 .button {
   display: block;
   width: 100%;
@@ -178,10 +141,12 @@ box-sizing: border-box;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.1s;
 }
+/**
+ * Hover and active states for buttons.
+ */
 
 .button:hover {
   background-color: var(--button-primary-hover);
-  /* Removed redundant transform: translateY(-2px); from the original */
   transform: translateY(-2px);
 }
 
@@ -192,8 +157,9 @@ box-sizing: border-box;
 /**
  * Error message styling (e.g., validation errors).
  */
+
 .error {
-  color: #ED3500; /* Red error color */
+  color: #ED3500;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
@@ -204,6 +170,10 @@ box-sizing: border-box;
 .hidden{
 visibility:hidden;
 }
+
+/**
+ * Styling for the "Forgot Password?" link.
+ */
 
 .forgotPasswordLink {
     align-self: flex-end;
@@ -216,46 +186,45 @@ visibility:hidden;
         color: var(--text-primary);
     }
 }
+
+/** Styles for the welcome message container after login.
+ */
+
  .welcome{
    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
-
-    /* ** LAYOUT AND SPACING ** */
     width: 100%;
-    max-width: 50rem; /* Same width as your form */
+    max-width: 50rem;
     padding: 3rem;
     margin-left:auto;
     margin-right:auto;
-    /* Center the text and stack the elements */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
+    align-items: center;
     text-align: center;
-    gap: 1.5rem; /* Consistent spacing between elements */
-
-    /* ** TYPOGRAPHY ** */
-    color: var(--text-primary, #333); /* Use a dark primary text color */
+    gap: 1.5rem;
+    color: var(--text-primary, #333);
 }
 
+/** Welcome message heading styles.
+ */
 .welcome h1 {
     font-size: 2rem;
-    color: var(--focus-color, #007bff); /* Highlight the welcome name */
+    color: var(--focus-color, #007bff);
     margin-bottom: 0.5rem;
 
 }
 
 .welcome h3 {
     font-size: 1.1rem;
-    font-weight: 500; /* Lighter weight for secondary text */
+    font-weight: 500;
     margin-bottom: 1.5rem;
 }
 
 /* Ensure the button maintains the desired style, though it may already be defined in .button */
 .welcome .button {
     margin-top: 1rem;
-    /* You might want a slightly different style for the Logout button
-       (e.g., outlined instead of filled) to differentiate it. */
 }
 
 /* --- Responsive Adjustments --- */
@@ -263,6 +232,7 @@ visibility:hidden;
 /**
  * Tablet and larger mobile screen adjustments.
  */
+
 @media (max-width: 768px) {
   .loginForm {
     /* Responsive changes to form padding and max-width */
@@ -296,29 +266,26 @@ visibility:hidden;
  */
 @media (max-width: 480px) {
   .loginForm {
-    /* Smaller padding for tight screens */
     padding: 2rem 1.5rem;
     max-width: 100%;
-    margin: 0 1rem; /* Ensure some margin from the screen edge */
+    margin: 0 1rem;
   }
 
   .heading {
     font-size: 1.0rem;
   }
   .inputGroup {
-          /* Reduce the padding for the icon area */
-   padding-left: 2.0rem; /* Reduced from 3rem */
+   padding-left: 2.0rem;
    }
-     .inputGroup input {
-           /* Tighter vertical padding inside the input field */
-           padding: 0.5rem 0.5rem 0.5rem 0;
-           font-size:0.6rem;
-       }
+  .inputGroup input{
+   padding: 0.5rem 0.5rem 0.5rem 0;
+   font-size:0.6rem;
+   }
 
-     .icon{
-     left: 0.5rem; /* Reduced from 1rem */
-      font-size: 1.2rem; /* Slightly smaller icon */
-     }
+   .icon{
+    left: 0.5rem;
+    font-size: 1.2rem;
+   }
 
    .error{
     font-size: 0.6rem;
@@ -329,24 +296,23 @@ visibility:hidden;
     font-size: 0.4rem;
     padding: 0.6rem 0.6rem;
     display: flex;
-             justify-content: center;  /* centers text horizontally */
-             align-items: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .welcome h1 {
       font-size: 0.6rem;
-      color: var(--focus-color, #007bff); /* Highlight the welcome name */
+      color: var(--focus-color, #007bff);
       margin-bottom: 0.5rem;
 
   }
 
   .welcome h3 {
       font-size: 0.6rem;
-      font-weight: 500; /* Lighter weight for secondary text */
+      font-weight: 500;
       margin-bottom: 0.5rem;
 
-
-  }
+}
    .forgotPasswordLink {
       font-size: 0.4rem;
       text-align:center;
@@ -356,63 +322,56 @@ visibility:hidden;
 }
 @media (max-width: 300px) {
     .loginForm {
-        /* Reduce padding drastically for extreme narrowness */
         padding: 1rem 0.5rem;
-
-        /* Ensure the form uses the full space with minimal margin from screen edge */
         width: calc(100% - 1rem);
         margin: 0.5rem auto;
     }
 
     .inputGroup {
-        /* Reduce the padding for the icon area */
-        padding-left: 2rem; /* Reduced from 3rem */
+        padding-left: 2rem;
     }
 
     .icon {
-        /* Adjust the icon position slightly to match the new padding */
-        left: 0.5rem; /* Reduced from 1rem */
-        font-size: 1.2rem; /* Slightly smaller icon */
+        left: 0.5rem;
+        font-size: 1.2rem;
     }
 
     .inputGroup input {
-        /* Tighter vertical padding inside the input field */
         padding: 0.75rem 0.5rem 0.75rem 0;
     }
 
     .forgotPasswordLink {
-        /* Ensure the link text fits */
         font-size: 0.5rem;
     }
        .error{
         font-size: 0.4rem;
        }
 
-       .button {
+      .button {
         display: flex;
-         justify-content: center;  /* centers text horizontally */
-         align-items: center;      /* centers text vertically */
+         justify-content: center;
+         align-items: center;
          font-size: 0.3rem;
          padding: 0.5rem 0.5rem;
          width: 100%;
-         text-align: center;       /* safe fallback */
-         box-sizing: border-box;   /* ensures padding doesn’t affect width */
+         text-align: center;
+         box-sizing: border-box;
         }
 
         .welcome h1 {
               font-size: 0.5rem;
-              color: var(--focus-color, #007bff); /* Highlight the welcome name */
+              color: var(--focus-color, #007bff);
               margin-bottom: 0.5rem;
 
           }
 
           .welcome h3 {
               font-size: 0.4rem;
-              font-weight: 500; /* Lighter weight for secondary text */
+              font-weight: 500;
               margin-bottom: 1.5rem;
                display: flex;
-                                 justify-content: center;  /* centers text horizontally */
-                                 align-items: center;
+              justify-content: center;
+              align-items: center;
 
           }
 }
