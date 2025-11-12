@@ -28,26 +28,24 @@
  * Main container for the Login Form (The card/box itself).
  * Defines the card's width, alignment, and spacing.
  */
-.loginForm{
-background-color: #FFECEC;
-
-    padding: 2.5rem 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
-    width: 100%;
-    max-width: 50rem;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1.5rem;
-    box-sizing: border-box;
-    margin-left:auto;
-    margin-right:auto;
-
+.loginForm {
+  position: relative;
+  background: linear-gradient(220deg,#FFC4C4,#FFECEC);
+  padding: 2.5rem 3rem;
+  border-radius: 5%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
 }
+
+
 .main{
 
-padding: 5rem 3rem; /* scalable padding using rem */
+padding: 5rem 5rem; /* scalable padding using rem */
 
 border-radius: 1rem;
 
@@ -227,7 +225,8 @@ visibility:hidden;
     width: 100%;
     max-width: 50rem; /* Same width as your form */
     padding: 3rem;
-
+    margin-left:auto;
+    margin-right:auto;
     /* Center the text and stack the elements */
     display: flex;
     flex-direction: column;
@@ -286,6 +285,10 @@ visibility:hidden;
   .forgotPasswordLink {
     font-size: 0.8rem;
   }
+  .welcome h1{
+  font-size: 1.5rem;
+
+  }
 }
 
 /**
@@ -300,21 +303,21 @@ visibility:hidden;
   }
 
   .heading {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
   }
   .inputGroup {
           /* Reduce the padding for the icon area */
-   padding-left: 2.5rem; /* Reduced from 3rem */
+   padding-left: 2.0rem; /* Reduced from 3rem */
    }
      .inputGroup input {
            /* Tighter vertical padding inside the input field */
-           padding: 0.75rem 0.5rem 0.75rem 0;
-           font-size:0.8rem;
+           padding: 0.5rem 0.5rem 0.5rem 0;
+           font-size:0.6rem;
        }
 
      .icon{
      left: 0.5rem; /* Reduced from 1rem */
-      font-size: 1.4rem; /* Slightly smaller icon */
+      font-size: 1.2rem; /* Slightly smaller icon */
      }
 
    .error{
@@ -323,13 +326,15 @@ visibility:hidden;
 
 
   .button {
-    font-size: 0.8rem;
+    font-size: 0.4rem;
     padding: 0.6rem 0.6rem;
-    text-align:center;
+    display: flex;
+             justify-content: center;  /* centers text horizontally */
+             align-items: center;
   }
 
   .welcome h1 {
-      font-size: 0.9rem;
+      font-size: 0.6rem;
       color: var(--focus-color, #007bff); /* Highlight the welcome name */
       margin-bottom: 0.5rem;
 
@@ -340,7 +345,12 @@ visibility:hidden;
       font-weight: 500; /* Lighter weight for secondary text */
       margin-bottom: 0.5rem;
 
+
   }
+   .forgotPasswordLink {
+      font-size: 0.4rem;
+      text-align:center;
+    }
 
 
 }
@@ -379,9 +389,14 @@ visibility:hidden;
        }
 
        .button {
-        font-size: 0.3rem;
-        padding: 0.5rem 0.5rem;
-        text-align:center;
+        display: flex;
+         justify-content: center;  /* centers text horizontally */
+         align-items: center;      /* centers text vertically */
+         font-size: 0.3rem;
+         padding: 0.5rem 0.5rem;
+         width: 100%;
+         text-align: center;       /* safe fallback */
+         box-sizing: border-box;   /* ensures padding doesn’t affect width */
         }
 
         .welcome h1 {
@@ -392,9 +407,12 @@ visibility:hidden;
           }
 
           .welcome h3 {
-              font-size: 0.2rem;
+              font-size: 0.4rem;
               font-weight: 500; /* Lighter weight for secondary text */
               margin-bottom: 1.5rem;
+               display: flex;
+                                 justify-content: center;  /* centers text horizontally */
+                                 align-items: center;
 
           }
 }
