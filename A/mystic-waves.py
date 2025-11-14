@@ -1,26 +1,30 @@
-# Question A:Mystic waves
-# Input Parameters: t = Number of test cases(1<=t<=100),
-# x = Energy value(x>=1),
-# n = Number of waves(n<=10)
-# Output: Total energy after n waves which is calculated as sum of sequence of energy values(x,-x,x...) of all waves(n).
-#Example
-# Input:
-# 2
-# 1 2
-# 2 3
-# Output:
-# 0 (1+(-1))
-# 2 (2+(-2)+2)
+# --- Complexity Analysis ---
+# Time Complexity: O(T)
+# The core function, total_energy(x, n), performs only constant-time arithmetic and comparison
+# operations, so its complexity is O(1).
+# The solve_updated function iterates exactly T times (T = number of test cases) and calls 
+# the O(1) function inside the loop. The input reading and parsing within the loop is also 
+# dominated by constant-time operations for splitting a line of two numbers.
+# Therefore, the overall time complexity is O(T).
 
-#Solution
-# Functin to calculate the total enery
+# Space Complexity: O(T)
+# The space is dominated by the 'results' list, which stores the integer result of the 
+# calculation for each of the T test cases.
+# Thus, the space used scales linearly with the number of test cases.
+# ---------------------------
+# Functin to calculate the total enery 
 def total_energy(x,n):
+    # Calculate the total energy after n waves
+    # If n is 0, total energy is x
     if(n==0):
         return x
+    # If n is even total energy is 0
     elif n>0 and n%2==0:
         return 0
+    # If n is odd total energy is x
     elif n>0 and n%2!=0:
         return x
+    # If n is negative total energy is 0
     else:
         return 0
 
@@ -88,10 +92,7 @@ def solve_updated():
     # Print all results
     for result in results:
         print(result)
-# Example to demonstrate logic:
-# if x=25, n=0 -> result = 25
-# if x=25, n=4 -> result = 0
-# if x=25, n=5 -> result = 25
+
 
 # You would call solve_updated() to run the script.
 solve_updated()

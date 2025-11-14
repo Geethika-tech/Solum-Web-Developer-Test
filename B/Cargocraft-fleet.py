@@ -1,3 +1,15 @@
+# --- Complexity Analysis ---
+# Time Complexity: O(1)
+# The core logic inside calculate_min_and_max_fleet involves only constant-time arithmetic operations
+# (division, modulo, addition, subtraction, assignment), which execute independently of the size of N.
+# The overall solve_final function runs in O(T), where T is the number of test cases,
+# because the O(1) function is executed T times.
+
+# Space Complexity: O(T)
+# The space is dominated by the 'output' list in solve_final, which stores T results (strings).
+# Thus, the space used scales linearly with the number of test cases.
+# ---------------------------
+
 import sys
 
 # Function to calculate minimum and maximum possible number of crafts in the fleet.
@@ -7,6 +19,7 @@ def calculate_min_and_max_fleet(n: int) -> int | tuple[int, int]:
     given the total propulsion units n. Returns -1 on error, or a tuple (x, y) on success.
     """
     # Step 1: Check if n is even or less than 4 (the minimum required units).
+    # If n is odd or less than 4, teh combination of Type A and Type B crafts cannot be possible.
     if n % 2 != 0 or n < 4:
         return -1 # Returns an integer for the error case
 
@@ -32,7 +45,7 @@ def calculate_min_and_max_fleet(n: int) -> int | tuple[int, int]:
         # If N is even, b=0 is possible (N = 2*a)
         a_max_crafts = N // 2
     else:
-        # N is odd, b must be at least 1 because b=0 will make N even (N = 2*a + 3*1)
+        # If N is odd, b must be at least 1 because b=0 will make N even (N = 2*a + 3*1)
         a_max_crafts = (N - 3) // 2
 
     b_max_crafts = (N - 2 * a_max_crafts) // 3
