@@ -29,7 +29,7 @@
  */
 
  .main{
- padding: 2rem 2rem;
+ padding: 2rem 5rem;
  border-radius: 1rem;
  width: 100%;
  max-width: 50rem;
@@ -44,10 +44,12 @@
 .loginForm {
   position: relative;
   background: linear-gradient(220deg,#FFC4C4,#FFECEC);
-  padding: 3rem 3rem;
+  padding: 2.5rem 3rem;
   border-radius: 5%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
-  max-width: 50rem;
+  max-width: 60rem;
+  width:70%;
+  height:auto;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
