@@ -10,14 +10,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
-      <body>
+     <body>
       <Toaster
-                position="top-center" // Common modern position
-                reverseOrder={false}
-              />
+       position="top-center"
+       reverseOrder={false}
+       />
       {children}
-      </body>
+     </body>
     </html>
   );
 }

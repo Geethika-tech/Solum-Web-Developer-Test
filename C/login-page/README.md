@@ -33,20 +33,16 @@ This project demonstrates client-side form validation and conditional rendering 
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone or Download
 ```bash
 git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git
 cd C/login-page
-2. Open in Browser
-You can open the project directly without any build tools:
 
 Run a local server:
-
 bash
-Copy code
-npx serve .
+pnpm dev .
 Then visit http://localhost:3000.
 
 💡 How It Works
@@ -76,14 +72,3 @@ CSS3 (with gradients, shadows, and responsive media queries)
 
 JavaScript (ES6) for validation logic and dynamic UI updates
 
-🧪 Validation Example
-Test Case	Expected Result
-Empty email or password	Show error message
-Invalid email	"Email does not exist"
-Weak password	"Password must be 8–16 characters, include uppercase, lowercase, number, and symbol"
-Wrong password	"Incorrect password"
-Valid credentials	Show welcome message
-
-👩‍💻 Author
-Geethika Pidikiti
-Feel free to reach out for any questions or suggestions!

@@ -2,8 +2,8 @@
  * Global variables for theme colors and typography.
  */
 :root {
-  --text-primary: #111;
-  --text-secondary: black;
+  --text-primary: black;
+  --text-secondary: grey;
   --button-primary: #974EC3; /* Blue */
   --button-primary-hover: #FF6AC2;
   --border-color: #ccc;
@@ -42,19 +42,25 @@
 
 
 .loginForm {
-  position: relative;
-  background: linear-gradient(220deg,#FFC4C4,#FFECEC);
-  padding: 2.5rem 3rem;
-  border-radius: 5%;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
-  max-width: 60rem;
-  width:70%;
-  height:auto;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  overflow: hidden;
+ position: relative;
+   /* 1. New Glassmorphism Background */
+   background: rgba(255, 255, 255, 0.01); /* White with 20% opacity */
+   /* 2. Key for the Glass Effect: Blur the background content */
+   backdrop-filter: blur(20px);
+   -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    padding: 2.5rem 3rem;
+   border-radius: 20px; /* Increased border-radius for a softer glass look */
+   /* 3. Subtle Border and Shadow for Definition */
+   border: 1px solid rgba(255, 255, 255, 0.18);
+   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.37);
+   max-width: 60rem;
+   width: 70%;
+   height: auto;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   overflow: hidden; /* Ensures content stays within rounded borders */
 }
 
 
@@ -63,7 +69,7 @@
  */
 .heading {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-primary);
   text-align: center;
   margin-bottom: 1rem;
@@ -76,7 +82,7 @@
 .inputGroup {
     position: relative;
     width: 100%;
-    border:none;
+    border-radius:0.5rem;
     background-color:#F9F8F6;
     display: flex;
     align-items: center;
@@ -106,7 +112,8 @@
 
 .inputGroup input {
 
-    border: none;
+    border-radius: 0.5rem;
+    border:none;
     outline: none;
     background-color:#F9F8F6 ;
     width: 100%;
@@ -132,7 +139,7 @@
 .button {
   display: block;
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   padding: 0.875rem 1rem;
   border-radius: 0.5rem;
   border: none;
