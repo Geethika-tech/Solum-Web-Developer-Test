@@ -42,7 +42,7 @@ Clicking “Logout” resets the form and shows the login page again.
 Responsive Design
 Uses CSS Flexbox and media queries for smooth resizing.
 
-Layout and font sizes automatically adapt for smaller screens (< 400px).
+Layout and font sizes automatically adapt for large, medium and smaller screens.
 
 ## Features
 
