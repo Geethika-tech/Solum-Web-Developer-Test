@@ -1,4 +1,4 @@
-# Goal: The goal of this problem is to find the minimum and maximum possible number of crafts (x, y) given the total propulsion units n.
+# Goal:The goal of this problem is to find the minimum and maximum possible number of crafts (x, y) given the total propulsion units n.
 # Input: The input is a list of t test cases, each test case is a number n.
 # Output: The output is a list of t lines, each line is the minimum and maximum possible number of crafts (x, y) given the total propulsion units n.
 # Constraints: 1 <= t <= 1000, 1<= n <= 10^18

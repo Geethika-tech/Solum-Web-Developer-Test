@@ -36,16 +36,16 @@ This project demonstrates client-side form validation and conditional rendering 
 ## Setup Instructions
 
 ### 1. Clone or Download
-```bash
-git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git
-cd C/login-page
 
+1)git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git
+2)cd C/login-page
+
+## Run Instructions
 Run a local server:
-bash
 pnpm dev .
 Then visit http://localhost:3000.
 
-💡 How It Works
+## How It Works
 The app checks the entered email against a small list of valid emails:
 
 js
