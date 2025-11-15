@@ -12,7 +12,6 @@ This project demonstrates client-side form validation and conditional rendering 
 ├── layout.js # Main layout component
 ├── page.module.css # Styling for layout and responsiveness
 ├── Page.js # Form logic, validation, and login handling
-├── Public/ # Images
 └── globals.css # Global styles
 
 ---
@@ -21,12 +20,12 @@ This project demonstrates client-side form validation and conditional rendering 
 
 ### 1. Clone or Download
 
-1)git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git
-2)cd C/login-page
+1. Clone the code using the command: git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git
+2. Navigae to the project folder using: cd C/login-page
 
 ## Run Instructions
 Run a local server:
-pnpm dev .
+Use the following command: pnpm dev .
 Then visit http://localhost:3000.
 
 ## How It Works
@@ -39,8 +38,6 @@ Passwords are validated using a regex for length and complexity.
 
 On success, the form hides and displays a welcome message:
 
-bash
-Copy code
 Welcome, test@example.com!
 Clicking “Logout” resets the form and shows the login page again.
 
