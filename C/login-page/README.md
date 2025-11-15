@@ -49,6 +49,7 @@ Layout and font sizes automatically adapt for large, medium and smaller screens.
         - Be between **8–16 characters**
         - Contain **one uppercase**, **one lowercase**, **one number**, and **one symbol**
     - Displays error messages for invalid input or incorrect credentials.
+- **Reset button:** Used to clear the input fields, to prevent page refresh.
 - **Successful login:** Displays a personalized welcome message with a Logout button.
 - **Notifications:** Notifies users of successful login and logout.
 - **Logout:** Returns to the login form.
