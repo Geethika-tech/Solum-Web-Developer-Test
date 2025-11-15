@@ -34,6 +34,9 @@ def solve_updated():
         # Read the number of test cases (t)
         print("Enter the number of test cases")
         t_line = input()
+        if not t_line:
+            print("Since t is empty, value is 0")
+            return
         t = int(t_line)
     except (EOFError, ValueError):
         return
