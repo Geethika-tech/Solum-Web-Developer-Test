@@ -3,6 +3,7 @@
 1. Input: The input is a list of t test cases, each test case is the value of x and n.
 2. Output: The output is a list of t lines, each line is the total energy after n waves.
 3. Constraints: 1 <= t <= 100, x>=1, n<=10
+4. For this problem I choose Python as programming language.
 
 # Setup instrcutions
 1. Install Python on your system if you haven't already
