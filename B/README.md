@@ -28,7 +28,7 @@
 
 # Note
 1. If the value of n is empty or no value is entered, the value is considered 0.
-2. If the value of t is empty or no value is entered, the value is considered 0 and program is stopped.
+2. If the value of t is empty or no value is entered, the value is considered 0 and program exits.
 
 
 
