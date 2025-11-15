@@ -3,7 +3,6 @@
 A responsive login page built using **HTML, CSS, and JavaScript** (with React and Next.js support).  
 This project demonstrates client-side form validation and conditional rendering for a mock authentication flow — no backend required.
 
----
 
 ## Project Structure
 
@@ -12,8 +11,6 @@ This project demonstrates client-side form validation and conditional rendering 
 2. **page.module.css**:Styling for layout and responsiveness
 3. **Page.js**:Form logic, validation, and login handling
 4. **globals.css**:Global styles
-
----
 
 ## Setup Instructions
 
