@@ -3,15 +3,6 @@
 A responsive login page built using **HTML, CSS, and JavaScript** (with React and Next.js support).  
 This project demonstrates client-side form validation and conditional rendering for a mock authentication flow — no backend required.
 
-
-## Project Structure
-
-Naviage to login-page/src/app to see the following files:
-1. **layout.js**:Main layout component
-2. **page.module.css**:Styling for layout and responsiveness
-3. **Page.js**:Form logic, validation, and login handling
-4. **globals.css**:Global styles
-
 ## Setup Instructions
 
 Clone or Download:
@@ -23,6 +14,14 @@ Clone or Download:
 Run a local server:
 1. Use the following command: **pnpm dev** or **npm run dev**.
 2. Then visit **http://localhost:3000** in web browser. A login form is displayed in the center of the webpage.
+
+## Project Structure
+
+Naviage to login-page/src/app to see the following files:
+1. **layout.js**:Main layout component
+2. **page.module.css**:Styling for layout and responsiveness
+3. **Page.js**:Form logic, validation, and login handling
+4. **globals.css**:Global styles
 
 ## How It Works
 The app checks the entered email against a small list of valid emails:
