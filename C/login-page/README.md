@@ -31,7 +31,7 @@ Run a local server:
 ## How It Works
 The app checks the entered email against a small list of valid emails:
 
-const credentials = [{ email: "test@example.com", password: "Test@1234" }].
+const credentials = [{ email: "test@example.com", password: "Test@1234" or email:"user@example.com", password: "User@5678" }].
 Passwords are validated using a regex for length and complexity.
 
 On success, the form hides and displays a welcome message:
@@ -43,8 +43,6 @@ Responsive Design
 Uses CSS Flexbox and media queries for smooth resizing.
 
 Layout and font sizes automatically adapt for smaller screens (< 400px).
-
----
 
 ## Features
 
