@@ -26,5 +26,9 @@
 4. The maximum number of crafts possible (y) is calculated by maximising the use of Type A crafts (2 units/craft).
 5. The code will output the minimum and maximum possible number of crafts (x, y) given the total propulsion units n.
 
+# Note
+1. If the value of n is empty or no value is entered, the value is considered 0.
+2. 
+
 
 
