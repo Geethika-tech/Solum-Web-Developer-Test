@@ -30,7 +30,7 @@ Run a local server:
 ## How It Works
 The app checks the entered email against a small list of valid emails:
 
-const credentials = [{ email: "test@example.com", password: "Test@1234" }];
+const credentials = [{ email: "test@example.com", password: "Test@1234" }].
 Passwords are validated using a regex for length and complexity.
 
 On success, the form hides and displays a welcome message:
