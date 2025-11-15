@@ -21,6 +21,7 @@ def calculate_min_and_max_fleet(n: int) -> int | tuple[int, int]:
     # Step 1: Check if n is even or less than 4 (the minimum required units).
     # If n is odd or less than 4, teh combination of Type A and Type B crafts cannot be possible.
     if n % 2 != 0 or n < 4:
+        # Also handles n=0, n=2, as they are < 4.
         return -1 # Returns an integer for the error case
 
     # The equation 4a+6b=n is reduced to: 2a + 3b = N where N=n//2
@@ -58,7 +59,7 @@ def calculate_min_and_max_fleet(n: int) -> int | tuple[int, int]:
 def solve_final():
     """
     Reads t, then reads t lines of n, processes all, and prints all output 
-    together. Includes robust error handling for input.
+    together. Includes robust error handling for input, treating empty n as 0.
     """
     
     read_line = sys.stdin.readline
@@ -71,7 +72,6 @@ def solve_final():
         t_line = read_line().strip()
         # Handle empty input gracefully
         if not t_line:
-            print("Since t is empty, the value is 0")
             return
         t = int(t_line)
     except ValueError:
@@ -82,21 +82,26 @@ def solve_final():
         return
 
     # --- 2. Loop t times to read and process n ---
-    for _ in range(t):
+    for i in range(t):
         try:
-            print("Enter the number of propulsion units:")
+            print(f"Enter the number of propulsion units for test case {i+1}:")
             n_line = read_line().strip()
-            # Stop if input stream ends early or line is empty
-            if not n_line:
-                break
-                
-            # n can be a very large number (up to 10^18), int() handles this.
-            n = int(n_line)
             
+            # --- MODIFICATION: Handle empty input for n by setting n=0 ---
+            if not n_line:
+                n = 0
+                print("Empty input detected for n. Treating n as 0.")
+            # Stop if input stream ends early (e.g., Ctrl+D/Z)
+            elif n_line == '': 
+                break # Should be caught by 'if not n_line' above, but kept for robustness
+            else:
+                # n can be a very large number (up to 10^18), int() handles this.
+                n = int(n_line)
+                
         except ValueError:
             # If a line contains non-integer characters, treat it as an error case 
             # and continue to the next iteration.
-            result_string = -1
+            result_string = "-1"
             output.append(result_string)
             continue
         except EOFError:
@@ -118,7 +123,9 @@ def solve_final():
             output.append(f"{x} {y}")
 
     # --- 4. Print all results to standard output ---
-    print("Output:")
+    print("\nOutput:")
+    # Ensure only results for completed test cases are printed, 
+    # in case the loop was broken early by EOF.
     sys.stdout.write('\n'.join(output) + '\n')
     
 
