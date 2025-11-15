@@ -5,7 +5,7 @@ This project demonstrates client-side form validation and conditional rendering 
 
 ---
 
-## 🛠️ Project Structure
+## Project Structure
 
 (login-page/src/app)
 │
@@ -41,7 +41,7 @@ On success, the form hides and displays a welcome message:
 Welcome, test@example.com!
 Clicking “Logout” resets the form and shows the login page again.
 
-📱 Responsive Design
+Responsive Design
 Uses CSS Flexbox and media queries for smooth resizing.
 
 Layout and font sizes automatically adapt for smaller screens (< 400px).
