@@ -58,5 +58,4 @@ Layout and font sizes automatically adapt for smaller screens (< 400px).
 - **Notifications:** Notifies users of successful login and logout.
 - **Logout:** Returns to the login form.
 
----
 
