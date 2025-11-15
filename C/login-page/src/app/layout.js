@@ -1,5 +1,6 @@
 // app/layout.js
 import './globals.css';
+//Import Toaster for notifications
 import { Toaster } from 'react-hot-toast';
 
 export const metadata = {

@@ -47,7 +47,7 @@ export default function LoginPage() {
       return;
     }
 
-    // Password policy check
+    // Password criteria check
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,16}$/;
     if (!passwordRegex.test(trimmedPassword)) {
@@ -91,6 +91,7 @@ export default function LoginPage() {
   setPassword("");
   setError("");
   }
+  // Renders the login form or welcome message based on state
 
   return (
     <div className={styles.page}>

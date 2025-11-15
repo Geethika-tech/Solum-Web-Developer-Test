@@ -1,84 +1,114 @@
 /* Import Inter font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/** CSS Variables for light and dark themes.
+/**
+ * ==============================
+ * CSS Variables for Themes
+ * ==============================
+ */
+
+/**
+ * CSS Variables for light theme (default).
+ * These variables define the color palette used throughout the application.
  */
 :root {
+  /* Starting color for background gradients (if used) */
   --background-start: #F3E8FF;
+  /* Ending color for background gradients (if used) */
   --background-end: #FFF4E5;
+  /* Color used for foreground elements or secondary background */
   --foreground: #E6F0FF;
 }
-/** Dark mode overrides for CSS variables.
+
+/** * Dark mode overrides for CSS variables.
+ * These styles automatically apply if the user's operating system is set to dark mode.
+ * NOTE: The current values are the same as light mode and should be updated for a true dark theme.
  */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-start: #F3E8FF;
-    --background-end: #FFF4E5;
-    --foreground: #E6F0FF;
+    /* Should be a dark color for true dark mode */
+    --background-start: #1e1e1e;
+    /* Should be a dark color for true dark mode */
+    --background-end: #2a2a2a;
+    /* Should be a lighter color for contrast */
+    --foreground: #444444;
   }
 }
 
 /**
- * Global styles for html and body.
+ * ==============================
+ * Global HTML and Body Styles
+ * ==============================
+ */
+
+/**
+ * Global styles for html and body elements.
+ * These rules ensure proper rendering across different devices and set base typography.
  */
 html,
 body {
+  /* Prevents horizontal scrolling caused by elements extending beyond the viewport width */
   max-width: 100vw;
+  /* Hides any content that overflows the horizontal axis */
   overflow-x: hidden;
+  /* Resets default browser margins and padding */
   margin: 0;
   padding: 0;
+  /* Sets the primary font stack */
   font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, sans-serif;
+  /* Improves font rendering quality on different operating systems */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:black;
-
+  /* Sets the default text color */
+  color: black;
 }
 
 /**
- * Body styles with gradient background and animations.
+ * Body-specific styles.
+ * Sets the main canvas properties for the entire page content.
  */
 body {
-    background:linear-gradient(to right,#FEEBF6,#EBD6FB);
+    /* Default background color for the body */
+    background-color: #F8FAFC;
+    /* Placeholder for background size, potentially used for animated/complex backgrounds */
     background-size: 400% 400%;
-    animation: gradientMove 15s ease infinite, /* Animation 1: Continuous background movement */
-            fade-in 1.5s ease-out 0s 1;     /* Animation 2: Fade-in on load (adjust duration/settings) */
+    /* Ensures the body takes up at least the full height of the viewport */
     min-height: 100vh;
-    background-color: #FEEBF6;
 }
 
+/** * ==============================
+ * Global Resets and Utility
+ * ==============================
+ */
+
 /** Global element resets and styles.
+ * The universal selector (*) resets box model properties for consistency.
  */
 * {
+  /* Ensures padding and border are included in the element's total width and height */
   box-sizing: border-box;
+  /* Resets default padding for all elements */
   padding: 0;
+  /* Resets default margin for all elements */
   margin: 0;
 }
 
+/**
+ * Anchor tag (link) styles.
+ */
 a {
+  /* Links inherit the color of their parent element */
   color: inherit;
+  /* Removes the default underline decoration from links */
   text-decoration: none;
 }
+
 /* Color scheme for dark mode support.
+ * Informs the browser to render default UI elements (like scrollbars, form controls)
+ * according to a dark theme when applicable.
  */
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
-
-/* Gradient animation for background */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Fade-in animation*/
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.2s ease-in-out;
 }

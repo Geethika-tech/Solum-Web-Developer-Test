@@ -5,22 +5,6 @@ This project demonstrates client-side form validation and conditional rendering 
 
 ---
 
-## Features
-
-- **Simple layout:** Centered login form with email and password inputs.
-- **Responsive design:** Works smoothly on both desktop and mobile screens.
-- **Validation rules:**
-    - Email must not be empty and must exist in a simulated list (e.g. `["test@example.com"]`).
-    - Password must:
-        - Be between **8–16 characters**
-        - Contain **one uppercase**, **one lowercase**, **one number**, and **one symbol**
-    - Displays error messages for invalid input or incorrect credentials.
-- **Successful login:** Displays a personalized welcome message with a Logout button.
-- **Notifications:** Notifies users of successful login and logout.
-- **Logout:** Returns to the login form.
-
----
-
 ## 🛠️ Project Structure
 
 (login-page/src/app)
@@ -65,10 +49,21 @@ Uses CSS Flexbox and media queries for smooth resizing.
 
 Layout and font sizes automatically adapt for smaller screens (< 400px).
 
-🧩 Technologies Used
-HTML5 for structure
+---
 
-CSS3 (with gradients, shadows, and responsive media queries)
+## Features
 
-JavaScript (ES6) for validation logic and dynamic UI updates
+- **Simple layout:** Centered login form with email and password inputs.
+- **Responsive design:** Works smoothly on both desktop and mobile screens.
+- **Validation rules:**
+    - Email must not be empty and must exist in a simulated list (e.g. `["test@example.com"]`).
+    - Password must:
+        - Be between **8–16 characters**
+        - Contain **one uppercase**, **one lowercase**, **one number**, and **one symbol**
+    - Displays error messages for invalid input or incorrect credentials.
+- **Successful login:** Displays a personalized welcome message with a Logout button.
+- **Notifications:** Notifies users of successful login and logout.
+- **Logout:** Returns to the login form.
+
+---
 

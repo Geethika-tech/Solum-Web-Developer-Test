@@ -3,9 +3,9 @@
  */
 :root {
   --text-primary: black;
-  --text-secondary: grey;
-  --button-primary: #974EC3; /* Blue */
-  --button-primary-hover: #FF6AC2;
+  --text-secondary: #3674B5;
+  --button-primary: #3674B5;
+  --button-primary-hover: black;
   --border-color: #ccc;
   --focus-color: #007bff;
 }
@@ -40,27 +40,21 @@
  box-sizing: border-box;
  }
 
-
+/* Styles for login form container */
 .loginForm {
- position: relative;
-   /* 1. New Glassmorphism Background */
-   background: rgba(255, 255, 255, 0.01); /* White with 20% opacity */
-   /* 2. Key for the Glass Effect: Blur the background content */
-   backdrop-filter: blur(20px);
-   -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    padding: 2.5rem 3rem;
-   border-radius: 20px; /* Increased border-radius for a softer glass look */
-   /* 3. Subtle Border and Shadow for Definition */
-   border: 1px solid rgba(255, 255, 255, 0.18);
-   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.37);
-   max-width: 60rem;
-   width: 70%;
-   height: auto;
-   margin: 0 auto;
-   display: flex;
-   flex-direction: column;
-   gap: 1.5rem;
-   overflow: hidden; /* Ensures content stays within rounded borders */
+position: relative;
+background: linear-gradient(360deg,#FBFBFB,#E8F9FF,#D9EAFD);
+padding: 2.5rem 3rem;
+border-radius: 5%;
+box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+max-width: 60rem;
+width:70%;
+height:auto;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+overflow: hidden;
 }
 
 
@@ -100,7 +94,7 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.5rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     pointer-events: none;
 }
 
@@ -187,12 +181,14 @@ visibility:hidden;
 .forgotPasswordLink {
     align-self: flex-end;
     font-size: 1rem;
-    font-weight: 500
-    color: var(--text-secondary); /* Use a subtle gray color */
-    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-primary);
+
 
     &:hover {
-        color: var(--text-primary);
+        color: var(--text-secondary);
+        text-decoration: underline;
+        cursor: pointer;
     }
 }
 
@@ -200,7 +196,7 @@ visibility:hidden;
  */
 
  .welcome{
-   background-color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(360deg,#FBFBFB,#E8F9FF,#D9EAFD);
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
     width: 100%;
@@ -239,14 +235,15 @@ visibility:hidden;
 /* --- Responsive Adjustments --- */
 
 /**
- * Tablet and larger mobile screen adjustments.
+ * Tablet and larger mobile screen adjustments. Applying different styles for UI elements when screensize changes.
+   When screen size is 768px or less.
  */
 
 @media (max-width: 768px) {
   .loginForm {
-    /* Responsive changes to form padding and max-width */
     padding: 3rem 2rem;
     max-width: 22rem;
+    border-radius:1rem;
   }
 
   .heading {
@@ -262,16 +259,24 @@ visibility:hidden;
     padding: 0.75rem 0.875rem;
   }
   .forgotPasswordLink {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .welcome h1{
   font-size: 1.5rem;
 
   }
+
+  .icon{
+    font-size: 1.3rem;
+  }
+
+  .inputGroup input{
+   font-size:0.8rem;
+   padding: 0.75rem 0.5rem 0.75rem 0;
 }
 
 /**
- * Small mobile screen adjustments.
+ * Small mobile screen adjustments. When screen size is 480px or less.
  */
 @media (max-width: 480px) {
   .loginForm {
@@ -288,7 +293,7 @@ visibility:hidden;
    }
   .inputGroup input{
    padding: 0.5rem 0.5rem 0.5rem 0;
-   font-size:0.6rem;
+   font-size:0.5rem;
    }
 
    .icon{
@@ -329,6 +334,10 @@ visibility:hidden;
 
 
 }
+
+/**
+ * Extra small mobile screen adjustments. When screen size is 300px or less.
+ */
 @media (max-width: 300px) {
     .loginForm {
         padding: 1rem 0.5rem;
@@ -341,12 +350,13 @@ visibility:hidden;
     }
 
     .icon {
-        left: 0.5rem;
-        font-size: 1.2rem;
+        left: 0.3rem;
+        font-size: 1rem;
     }
 
     .inputGroup input {
         padding: 0.75rem 0.5rem 0.75rem 0;
+        font-size: 0.4rem;
     }
 
     .forgotPasswordLink {
