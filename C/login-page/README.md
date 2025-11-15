@@ -18,10 +18,9 @@ This project demonstrates client-side form validation and conditional rendering 
 
 ## Setup Instructions
 
-### 1. Clone or Download
-
+Clone or Download:
 1. Clone the code using the command: git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git
-2. Navigae to the project folder using: cd C/login-page
+2. Navigate to the project folder using: cd C/login-page
 
 ## Run Instructions
 Run a local server:
@@ -31,8 +30,6 @@ Run a local server:
 ## How It Works
 The app checks the entered email against a small list of valid emails:
 
-js
-Copy code
 const credentials = [{ email: "test@example.com", password: "Test@1234" }];
 Passwords are validated using a regex for length and complexity.
 
