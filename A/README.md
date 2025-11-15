@@ -1,5 +1,5 @@
 
-# Goal: The goal of this problem is to find the total energy after n waves which is calculated as sum of sequence of energy values(x,-x,x...) of all waves(n).
+# The goal of this problem is to find the total energy after n waves which is calculated as sum of sequence of energy values(x,-x,x...) of all waves(n).
 1. Input: The input is a list of t test cases, each test case is the value of x and n.
 2. Output: The output is a list of t lines, each line is the total energy after n waves.
 3. Constraints: 1 <= t <= 100, x>=1, n<=10
