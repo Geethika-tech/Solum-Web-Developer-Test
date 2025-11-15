@@ -71,6 +71,7 @@ def solve_final():
         t_line = read_line().strip()
         # Handle empty input gracefully
         if not t_line:
+            print("Since t is empty, the value is 0")
             return
         t = int(t_line)
     except ValueError:
