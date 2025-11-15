@@ -32,6 +32,7 @@ def total_energy(x,n):
 def solve_updated():
     try:
         # Read the number of test cases (t)
+        print("Enter the number of test cases")
         t_line = input()
         t = int(t_line)
     except (EOFError, ValueError):
@@ -43,6 +44,7 @@ def solve_updated():
     for i in range(t):
         try:
             # Read the line, preserving leading spaces with split(' ')
+            print("Enter the values of x and n with space in between")
             line = input().split(' ')
             
             # --- CRITICAL FIX START ---
@@ -54,7 +56,7 @@ def solve_updated():
                 
                 # Consume remaining items on the line just to keep the input stream clean
                 # before moving to the next iteration. (e.g. skip the '3' which was meant to be n)
-                print("Since x is missing, skipping this tes case")
+                print("Since x is missing, skipping this test case")
                 continue
                 
             # --- CRITICAL FIX END ---
@@ -90,6 +92,7 @@ def solve_updated():
         results.append(result)
         
     # Print all results
+    print("Output:")
     for result in results:
         print(result)
 

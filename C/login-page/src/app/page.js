@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
+// Import icons to display in input fields
 import { MdEmail } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
+// Import toast for notifications
 import toast from "react-hot-toast";
 
 // Simulated credentials
