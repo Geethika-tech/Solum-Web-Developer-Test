@@ -27,6 +27,6 @@
 5. The code will output the minimum and maximum possible number of crafts (x, y) given the total propulsion units n.
 
 # Note
-1. When accepting input values (x and n) if x is empty or no value is entered the test case is skipped.
+1. When accepting input values (x and n) if x is empty or no value is entered the, test case is skipped.
 2. If n is empty or no value is entered, the value is set to 0.
 
