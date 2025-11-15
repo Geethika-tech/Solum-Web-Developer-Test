@@ -5,8 +5,8 @@
 4. For this problem I choose Python as programming language.
 
 # Setup instructions
-1. Install Python on your system if you haven't already.
-2. Clone the code from github (if you haven't already) using the command: 
+1. Install Python.
+2. Clone the code from github using the command: 
    **git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git**
    or download the zip file from github repo and extract files. Then open it in any code editor.
 4. Navigate to the project directory using the command: 
