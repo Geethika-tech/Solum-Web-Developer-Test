@@ -19,13 +19,14 @@ This project demonstrates client-side form validation and conditional rendering 
 ## Setup Instructions
 
 Clone or Download:
-1. Clone the code using the command: git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git
-2. Navigate to the project folder using: cd C/login-page
+1. Clone the code using the command: **git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git** or download the code from github repo and extract the zip files and open it in any code editor.
+2. Navigate to the project folder using: **cd C/login-page** (After navigating to Solumn-Web-Developer-Test folder)
+3. Install the necessary dependencies using the command: **pnpm install** or **npm install** based on package manager being used.
 
 ## Run Instructions
 Run a local server:
-1. Use the following command: pnpm dev .
-2. Then visit http://localhost:3000 in web browser.
+1. Use the following command: **pnpm dev** or **npm run dev**.
+2. Then visit **http://localhost:3000** in web browser. A login form is displayed in the center of the webpage.
 
 ## How It Works
 The app checks the entered email against a small list of valid emails:
