@@ -8,11 +8,10 @@ This project demonstrates client-side form validation and conditional rendering 
 ## Project Structure
 
 (login-page/src/app)
-│
-├── layout.js # Main layout component
-├── page.module.css # Styling for layout and responsiveness
-├── Page.js # Form logic, validation, and login handling
-└── globals.css # Global styles
+1. **layout.js**:Main layout component
+2. **page.module.css**:Styling for layout and responsiveness
+3. **Page.js**:Form logic, validation, and login handling
+4. **globals.css**:Global styles
 
 ---
 
