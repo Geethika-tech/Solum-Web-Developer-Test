@@ -4,19 +4,20 @@
 3. Constraints: 1 <= t <= 1000, 1<= n <= 10^18
 4. For this problem I choose Python as programming language.
 
-# Setup instrcutions
+# Setup instructions
 1. Install Python on your system if you haven't already.
 2. Clone the code from github (if you haven't already) using the command: 
    **git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git**
-3. Navigate to the project directory using the command: 
-   **cd B**
+   or download the zip file from github repo and extract files. Then open it in any code editor.
+4. Navigate to the project directory using the command: 
+   **cd B** (After navigating to Solumn-Web-Developer-Test folder)
 # Run the code
 1. Run the code using command:
    **python Cargocraft-fleet.py**
 2. The code will ask for following inputs:
    - t (number of test cases)
    - n (number of propulsion units)
-3. The code will output the minimum and maximum possible number of crafts (x, y) given the total      propulsion units n. 
+3. The code will output the minimum and maximum possible number of crafts (x, y) given the total propulsion units n. 
 
 # Problem solving logic
 1. The problem is to find the minimum and maximum possible number of crafts (x, y) given the total propulsion units n.
