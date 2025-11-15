@@ -32,5 +32,6 @@
 # Note
 1. When accepting input values (x and n) if x is empty or no value is entered the, test case is skipped.
 2. If n is empty or no value is entered, the value is set to 0.
+3. If t is empty or no value is entered, the value is 0. Program stops.
   
 
