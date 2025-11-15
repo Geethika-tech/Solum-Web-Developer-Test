@@ -19,7 +19,7 @@ def calculate_min_and_max_fleet(n: int) -> int | tuple[int, int]:
     given the total propulsion units n. Returns -1 on error, or a tuple (x, y) on success.
     """
     # Step 1: Check if n is even or less than 4 (the minimum required units).
-    # If n is odd or less than 4, teh combination of Type A and Type B crafts cannot be possible.
+    # If n is odd or less than 4, the combination of Type A and Type B crafts cannot be possible.
     if n % 2 != 0 or n < 4:
         # Also handles n=0, n=2, as they are < 4.
         return -1 # Returns an integer for the error case
