@@ -25,8 +25,8 @@ This project demonstrates client-side form validation and conditional rendering 
 
 ## Run Instructions
 Run a local server:
-Use the following command: pnpm dev .
-Then visit http://localhost:3000.
+1. Use the following command: pnpm dev .
+2. Then visit http://localhost:3000 in web browser.
 
 ## How It Works
 The app checks the entered email against a small list of valid emails:
