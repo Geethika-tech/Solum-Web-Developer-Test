@@ -7,9 +7,10 @@
 
 # Setup instrcutions
 1. Install Python on your system if you haven't already
-2. Clone the code from github (if you haven't already) using the command: 
+2. Clone the code from github using the command: 
    **git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git**
-3. Navigate to the project directory using the command: 
+   or download the zip file, extract the files and open it in any code editor.
+4. Navigate to the project directory using the command: 
    **cd A**
 # Run the code
 1. Run the code using command:
