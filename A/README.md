@@ -28,5 +28,9 @@
     - If n is even, the total energy is 0. As each wave has a positive and a negative energy value, they cancel each other out.
     - If n is odd, the total energy is x. As the last wave has a positive energy value, it is not cancelled out.
 3. The code will output the total energy after n waves for each test case.
+
+# Note
+1. When accepting input values (x and n) if x is empty or no value is entered the, test case is skipped.
+2. If n is empty or no value is entered, the value is set to 0.
   
 
