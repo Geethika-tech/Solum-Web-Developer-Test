@@ -11,7 +11,7 @@
    **git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git**
    or download the zip file, extract the files and open it in any code editor.
 4. Navigate to the project directory using the command: 
-   **cd A**
+   **cd A** (After navigating to Solum-Web-Developer-Test folder)
 # Run the code
 1. Run the code using command:
    **python mystic-waves.py**
