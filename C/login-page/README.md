@@ -8,7 +8,7 @@ This project demonstrates client-side form validation and conditional rendering 
 Clone or Download:
 1. Clone the code using the command: **git clone https://github.com/Geethika-tech/Solum-Web-Developer-Test.git** or download the zip folder from github repo and extract the files and open it in any code editor.
 2. Navigate to the project folder using: **cd C/login-page** (After navigating to Solumn-Web-Developer-Test folder)
-3. Install the necessary dependencies using the command: **pnpm install** or **npm install** based on package manager being used.
+3. Install the necessary dependencies using the command: **pnpm i** or **npm i** based on package manager being used.
 
 ## Run Instructions
 Run a local server:
