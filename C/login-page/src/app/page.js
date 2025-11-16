@@ -7,8 +7,9 @@ import { MdEmail } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
 // Import toast for notifications
 import toast from "react-hot-toast";
+import { handleLogin } from "./utils/loginHandler";
 
-// Simulated credentials
+// Sample credentials for demonstration
 const credentials = [
   { email: "test@example.com", password: "Test@1234" },
   { email: "user@example.com", password: "User@5678" },
@@ -21,59 +22,16 @@ export default function LoginPage() {
   const [hideForm, setHideForm] = useState(false);
 
   // Handle login form submission
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    setError(""); // clear previous errors
-
-    // Trimmed inputs for reliable validation
-    const trimmedEmail = email.trim();
-    const trimmedPassword = password.trim();
-
-    // --- Validation Checks ---
-    if (!trimmedEmail || !trimmedPassword) {
-      setError(
-        !trimmedEmail && !trimmedPassword
-          ? "Email and password cannot be empty"
-          : !trimmedEmail
-          ? "Email cannot be empty"
-          : "Password cannot be empty"
-      );
-      return;
-    }
-
-    // Check if email exists
-    const user = credentials.find((cred) => cred.email === trimmedEmail);
-    if (!user) {
-      setError("Email does not exist");
-      return;
-    }
-
-    // Password criteria check
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,16}$/;
-    if (!passwordRegex.test(trimmedPassword)) {
-      setError(
-        "Password must be 8–16 characters, include uppercase, lowercase, number, and symbol"
-      );
-      return;
-    }
-
-    // Verify password
-    if (user.password !== trimmedPassword) {
-      setError("Incorrect password");
-      return;
-    }
-
-    // --- Successful Login ---
-    setHideForm(true);
-    setError(""); // clear error
-
-    toast.success(`Welcome, ${trimmedEmail}!`, {
-      duration: 3000,
-      position: "top-center",
-    });
-  };
+  const handleSubmit = (e) => {
+      handleLogin({
+        e,
+        email,
+        password,
+        credentials, // Pass the credentials
+        setError, // Pass the setter functions
+        setHideForm, // Pass the setter functions
+      });
+    };
 
   // Handle logout
   const handleLogout = () => {
@@ -87,13 +45,6 @@ export default function LoginPage() {
     });
   };
 
-  // Handles form reset by resetting all fields and errors
-  const handleReset = () => {
-  setEmail("");
-  setPassword("");
-  setError("");
-  }
-  // Renders the login form or welcome message based on state
 
   return (
     <div className={styles.page}>
@@ -112,7 +63,7 @@ export default function LoginPage() {
             </button>
           </div>
         ) : (
-          <form className={styles.loginForm} onSubmit={handleLogin}>
+          <form className={styles.loginForm} onSubmit={handleSubmit}>
             <h1 className={styles.heading}>Login</h1>
 
            <div className={styles.inputGroup}>
@@ -151,14 +102,6 @@ export default function LoginPage() {
               className={styles.button}
             >
               Login
-            </button>
-
-            <button
-             type="button"
-             className={styles.button}
-             onClick={handleReset}
-             >
-             Reset
             </button>
 
           </form>
