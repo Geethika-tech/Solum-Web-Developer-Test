@@ -251,12 +251,13 @@ visibility:hidden;
   }
 
   .error{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .button {
     font-size: 0.95rem;
     padding: 0.75rem 0.875rem;
+    margin-top: 0.5rem;
   }
   .forgotPasswordLink {
     font-size: 0.7rem;
@@ -303,7 +304,7 @@ visibility:hidden;
    }
 
    .error{
-    font-size: 0.6rem;
+    font-size: 0.3rem;
    }
 
 
@@ -313,6 +314,7 @@ visibility:hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0.7rem;
   }
 
   .welcome h1 {
@@ -333,6 +335,30 @@ visibility:hidden;
       text-align:center;
     }
 
+
+}
+
+/**
+ * Extra small mobile screen adjustments. When screen size is 335px or less.
+ */
+@media (max-width: 335px) {
+
+.error{
+    font-size: 0.2rem;
+}
+.button{
+    font-size: 0.2rem;
+   padding: 0.4rem 0.4rem;
+}
+.heading{
+    font-size: 0.5rem;
+}
+
+ .inputGroup input{
+    font-size: 0.3rem;
+    padding: 0.4rem 0.4rem 0.4rem 0;
+    text-align: center;
+ }
 
 }
 
