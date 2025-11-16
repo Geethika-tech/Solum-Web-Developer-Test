@@ -404,10 +404,9 @@ visibility:hidden;
          box-sizing: border-box;
         }
         .welcome {
-                width: 100%; /* Ensure it takes full available width */
-                margin: 0 auto; /* This centers the block element */
-                /* margin-left: auto; is removed */
-            }
+         width: 100%;
+         margin: 0 auto;
+        }
 
         .welcome h1 {
               font-size: 0.5rem;
