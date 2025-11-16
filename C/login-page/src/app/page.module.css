@@ -403,6 +403,11 @@ visibility:hidden;
          text-align: center;
          box-sizing: border-box;
         }
+        .welcome {
+                width: 100%; /* Ensure it takes full available width */
+                margin: 0 auto; /* This centers the block element */
+                /* margin-left: auto; is removed */
+            }
 
         .welcome h1 {
               font-size: 0.5rem;
